@@ -1,0 +1,41 @@
+<style>
+  .container {
+    margin-top: 20px;
+    width: 100vw;
+    height: 60vh;
+    margin: 5px;
+  }
+
+  .valorInicial {
+    display: flex;
+    font-size: 20px;
+    align-content: center;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 20px;
+  }
+
+  .descricao {
+    color: black;
+    font-size: 16px;
+    text-align: justify;
+    padding: 20px;
+  }
+</style>
+
+<div class="container">
+  <div class="descricao">
+    <p>Eu sou o Html do Arquivo
+      <b>lifecycle.component.html</b>
+    </p>
+    <p>
+      Pegando o valor de valorInicial declarado no Arquivo
+      <b>app.component.ts</b>
+    </p>
+  </div>
+
+</div>
+<div class="valorInicial">
+  <span> <b>Valor Inicial:</b> {{ valorInicial2 }} </span>
+  <span> <b>Valor deletarConteudo:</b> {{ deletarConteudo2 }} </span>
+</div>

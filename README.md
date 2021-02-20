@@ -1,27 +1,49 @@
-# ProjetoLifecycle
+Estudando LifeCycle Hooks
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
+1-ngOnChanges
+2-ngOnInit
+3-ngDoCheck
+4-ngAfterContentInit
+5-ngAfeterContentChecked
+6-ngAfterViewChecked
+7-ngOnDestroy
 
-## Development server
+===============================================================================
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+ngOnChanges()
 
-## Code scaffolding
+Quando um component filho, que possui uma propriedade do tipo Input(), é o pai passa esse valor, automaticamente o ngOnChanges é executado, pois ouve alteração no conteudo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+No exemplo, criei 2 botoes, que ao serem clicados (click), alteram o valor da variavel valorInicial, que é passada para o componente filho(Possui a variavel valorInicial2 como Input())
 
-## Build
+===============================================================================
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+observar que dentro do app.component.ts
 
-## Running unit tests
+implementei:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2 variaveis
+  -valorInicial
+  -deletarConteudo
 
-## Running end-to-end tests
+1 metodo
+  -mudarValorInicial()
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Sendo assim essas variaveis possuem um Input() no componente filho que ira receber conforme valor abaixo
+```html
+  <lifecycle
+    [valorInicial2]="valorInicial"
+    *ngIf="!deletarConteudo"
+    [deletarConteudo2]="deletarConteudo"
+    >
+  </lifecycle>
+```
+Alem disso, utilizei botoes para simular os hooks
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```html
+  <div style="display: flex; flex-direction: row;">
+    <button (click)="mudarValorInicial(12)">Mudar o valor</button>
+    <button (click)="valorInicial = 33">Mudar o valor novamente</button>
+    <button (click)="deletarConteudo = true">Deletar o conteudo</button>
+  </div> 
+```

@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'projeto-lifecycle';
+
+  valorInicial = 25;
+  deletarConteudo = false;
+
+  mudarValorInicial(valor: number){
+    this.valorInicial = valor
+    this.deletarConteudo = false
+  }
+
+
 }

@@ -42,4 +42,17 @@
 
   </div>
 
+  <!-- <lifecycle></lifecycle> -->
+  <lifecycle
+    [valorInicial2]="valorInicial"
+    *ngIf="!deletarConteudo"
+    [deletarConteudo2]="deletarConteudo"
+    ></lifecycle>
+
+  <div class="botoes">
+    <button (click)="mudarValorInicial(12)">Mudar o valor</button>
+    <button (click)="valorInicial = 33">Mudar o valor novamente</button>
+    <button (click)="deletarConteudo = true">Deletar o conteudo</button>
+  </div>
+
 <router-outlet></router-outlet>
